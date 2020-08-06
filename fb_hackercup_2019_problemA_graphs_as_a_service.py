@@ -36,25 +36,18 @@ def findSolution(filename):
             NM=list(map(int,in_file.readline().split()))
             N=NM[0]
             M=NM[1]
-            #print("Case #{}: ".format(t+1))
-            #print(N,M)
-            
+
             #INT_MAX=sys.maxsize -1
             INT_MAX=1000000
             # initialize distance matrix between 2 nodes Xi and Yi
             dist = [[INT_MAX for i in range(N)] for j in range(N)]
             for i in range(N):
                 dist[i][i]=0
-            #print("Case #{}: ".format(t+1))
-            #print(dist)
             
             X=[0]*M
             Y=[0]*M
             Z=[0]*M
-            
-            #result = [str(M)]
-            #print(result)
-            
+             
             # M lines follow
             # the ith of which states that the shortest distance
             # between two different nodes Xi and Yi must be equal to Zi.
@@ -69,12 +62,7 @@ def findSolution(filename):
                     Z[i]=r[2]
                     dist[X[i]][Y[i]]=Z[i]
                     dist[Y[i]][X[i]]=Z[i]
-            
-                
-                # read ith requirement r
-                #X,Y,Z=list(map(int,my_file.readline().split()))
-            
-                    
+           
             #print("Case #{}: ".format(t+1))
             #print(dist)
             
@@ -89,8 +77,6 @@ def findSolution(filename):
                 for i in range(N):
                     for j in range(N):
                         dist[i][j]=min(dist[i][j],dist[i][k]+dist[k][j])
-            #print("Case #{}: ".format(t+1))
-            #print("floyd:",dist)
 
             # For each requirement i that the shortest distance
             # between nodes X_i and Y_i must be Z_i,
@@ -118,13 +104,9 @@ def findSolution(filename):
                 out_file.write("Case #{}: {}\n".format(t+1,M))
                 for i in range(M):
                     out_file.write("{} {} {}\n".format(X[i]+1,Y[i]+1,Z[i]))
-            
-            
+              
 if __name__ == "__main__":    
     #findSolution("graphs_as_a_service_sample_input.txt")
     findSolution("graphs_as_a_service.in")
     print("Done")
-
-
-
-
+    
