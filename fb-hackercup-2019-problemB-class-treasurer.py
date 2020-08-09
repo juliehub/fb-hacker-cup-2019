@@ -1,6 +1,3 @@
-
-import sys
-
 def findSolution(filename):
     """
     https://www.facebook.com/codingcompetitions/hacker-cup/2019/round-1/problems/B
@@ -80,7 +77,3 @@ if __name__ == "__main__":
     #findSolution("class_treasurer_sample_input.txt")
     findSolution("class_treasurer_input.txt")
     print("Done")
-    
-
-
-
